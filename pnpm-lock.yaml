@@ -4,7 +4,7 @@ specifiers:
   '@arco-design/web-react': ^2.41.2
   '@codemirror/lang-json': ^6.0.1
   '@ethersproject/providers': ^5.7.2
-  '@glacier-network/client': ^0.1.1
+  '@glacier-network/client': ^0.1.2
   '@types/node': ^16.18.3
   '@types/prismjs': ^1.26.0
   '@types/react': ^18.0.25

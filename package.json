@@ -1,6 +1,6 @@
 {
-  "name": "glacier-lake",
-  "version": "0.1.0",
+  "name": "glacier-playground",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@arco-design/web-react": "^2.41.2",

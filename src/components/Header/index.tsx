@@ -11,7 +11,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.brand}>
         <img src="/favicon.svg" alt="" />
-        <span>Glacier Lake</span>
+        <span>Glacier Playground</span>
       </div>
       <Space size="medium">
         {!!account && <span>{util.shortAccount(account)}</span>}

@@ -1,4 +1,4 @@
-# Glacier Lake
+# Glacier playground
 
 ## Quick Start
 
