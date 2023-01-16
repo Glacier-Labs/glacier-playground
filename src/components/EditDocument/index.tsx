@@ -61,6 +61,8 @@ const EditDocument = observer((props: Props) => {
         ref={formRef}
         size="large"
         initialValues={JSON.parse(props.value || '{}')}
+        labelCol={{ span: 6 }}
+        wrapperCol={{ span: 18 }}
       >
         {keys.map(item => {
           const formItem = properties[item]

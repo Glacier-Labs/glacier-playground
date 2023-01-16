@@ -16,7 +16,7 @@ export default function Header() {
       <Space size="medium">
         {!!account && <span>{util.shortAccount(account)}</span>}
         <Button
-          href="https://main.d1nqde07ul76he.amplifyapp.com/"
+          href="https://testnet.scan.glacier.io/"
           type="primary"
           shape="round"
           target="_blank"
