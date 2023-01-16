@@ -33,6 +33,7 @@ const EditDocument = observer((props: Props) => {
   const chooseMode = useRef<EditMode>()
   const formRef = useRef<FormInstance>(null)
   const jsonRef = useRef<FormInstance>(null)
+  const [loading, setLoading] = useState(false)
   const [visible, setVisible] = useState(false)
 
   const schema = useMemo(() => {
@@ -186,6 +187,7 @@ const EditDocument = observer((props: Props) => {
       doc = JSON.parse(form.doc)
     }
     try {
+      setLoading(true)
       if (!props._id) {
         await store.insertDocument(
           props.space,
@@ -221,6 +223,8 @@ const EditDocument = observer((props: Props) => {
       } else {
         Message.error('Create Failed')
       }
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -261,7 +265,7 @@ const EditDocument = observer((props: Props) => {
         <Button key="cancel" onClick={() => setVisible(false)}>
           Cancel
         </Button>,
-        <Button key="ok" type="primary" onClick={onSubmit}>
+        <Button key="ok" type="primary" onClick={onSubmit} loading={loading}>
           OK
         </Button>
       ]}

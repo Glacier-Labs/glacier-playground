@@ -4,7 +4,7 @@ specifiers:
   '@arco-design/web-react': ^2.41.2
   '@codemirror/lang-json': ^6.0.1
   '@ethersproject/providers': ^5.7.2
-  '@glacier-network/client': ^0.1.2
+  '@glacier-network/client': ^0.2.0
   '@types/node': ^16.18.3
   '@types/prismjs': ^1.26.0
   '@types/react': ^18.0.25
@@ -32,7 +32,7 @@ dependencies:
   '@arco-design/web-react': 2.43.2_ib3m5ricvtkl2cll7qpr2f6lvq
   '@codemirror/lang-json': 6.0.1
   '@ethersproject/providers': 5.7.2
-  '@glacier-network/client': registry.npmjs.org/@glacier-network/client/0.1.2
+  '@glacier-network/client': registry.npmjs.org/@glacier-network/client/0.2.0
   '@types/node': 16.18.11
   '@types/prismjs': 1.26.0
   '@types/react': 18.0.26
@@ -10553,16 +10553,18 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  registry.npmjs.org/@glacier-network/client/0.1.2:
-    resolution: {integrity: sha512-1KOMQ4mxlXpqhh0u0eaARG57nNS5Jln6rm+vlC12WyQ9wWjNDvrY3frA7nBHKfxf82BG9bSG2UzLXSL3iN58hQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@glacier-network/client/-/client-0.1.2.tgz}
+  registry.npmjs.org/@glacier-network/client/0.2.0:
+    resolution: {integrity: sha512-kRL4cF4ZwcSRnCaQ+1ikE9CvnFcVzfOWct7FnNB6BZP8WEeGE61yXBCfC4OGSe84IqM1S+ud4hWpODaCtGxCLg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@glacier-network/client/-/client-0.2.0.tgz}
     name: '@glacier-network/client'
-    version: 0.1.2
+    version: 0.2.0
     dependencies:
       '@ethersproject/abstract-signer': 5.7.0
       '@ethersproject/bytes': 5.7.0
       '@ethersproject/hash': 5.7.0
       '@ethersproject/providers': 5.7.2
+      '@ethersproject/sha2': 5.7.0
       '@ethersproject/signing-key': 5.7.0
+      '@ethersproject/strings': 5.7.0
       '@ethersproject/wallet': 5.7.0
       '@types/json-schema': 7.0.11
       axios: 1.2.2
