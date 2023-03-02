@@ -52,6 +52,13 @@ const CreateNamespace = observer((props: Props) => {
           rules={[
             {
               required: true
+            },
+            {
+              validator(value, cb) {
+                const msg = 'letters a-Z, numbers 0-9, 3-16 characters'
+                if (!/^[a-zA-Z0-9]{3,16}$/.test(value)) cb(msg)
+                else cb()
+              }
             }
           ]}
         >

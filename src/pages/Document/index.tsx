@@ -13,7 +13,6 @@ import {
   Input,
   Button,
   Empty,
-  Tooltip,
   Table,
   TableColumnProps,
   Space,
@@ -21,11 +20,10 @@ import {
   Message
 } from '@arco-design/web-react'
 import {
-  IconPlayArrow,
-  IconPlus,
   IconEdit,
   IconDelete,
-  IconEye
+  IconEye,
+  IconLaunch
 } from '@arco-design/web-react/icon'
 
 import styles from './style.module.scss'
@@ -198,10 +196,14 @@ const Document = observer(
                 <span>{tab.collection.collection}</span>
               </Breadcrumb.Item>
             </Breadcrumb>
-            <Tooltip content="Insert Document" position="left">
+            <Space direction="vertical" align="end">
               <Button
-                icon={<IconPlus />}
-                size="large"
+                icon={<IconLaunch />}
+                type="primary"
+                href={`https://testnet.scan.glacier.io/collection?namespace=${tab.namespace}&dataset=${tab.dataset}&collection=${tab.collection.collection}`}
+                target="_blank"
+              />
+              <Button
                 type="primary"
                 onClick={() => {
                   modals.editDocument(
@@ -210,25 +212,24 @@ const Document = observer(
                     tab.collection
                   )
                 }}
-              />
-            </Tooltip>
+              >
+                Insert Document
+              </Button>
+            </Space>
           </div>
           <div className={styles.toolbar}>
             <Input
+              addBefore="Filter"
               prefix={`db.collection("${tab.collection.collection}").`}
               value={cmd}
-              size="large"
               onChange={value => setCmd(value)}
             />
-            <Tooltip content="Execute Query" position="left">
-              <Button
-                icon={<IconPlayArrow />}
-                type="primary"
-                size="large"
-                loading={loading}
-                onClick={() => list(cmd)}
-              />
-            </Tooltip>
+            <Button type="primary" loading={loading} onClick={() => list(cmd)}>
+              Apply
+            </Button>
+            <Button type="outline" onClick={refresh}>
+              Reset
+            </Button>
           </div>
         </div>
         <div className={styles.main}>

@@ -1,13 +1,19 @@
 import classnames from 'classnames'
 import { observer } from 'mobx-react'
-import { IconRight, IconMore, IconLoading } from '@arco-design/web-react/icon'
+import {
+  IconRight,
+  IconMore,
+  IconLoading,
+  IconPlus,
+  IconEye
+} from '@arco-design/web-react/icon'
 
 import styles from './style.module.scss'
 import { ReactComponent as IconDatabase } from '@assets/imgs/database.svg'
 import { ReactComponent as IconTable } from '@assets/imgs/table.svg'
 import { useStore } from '@libs/store'
 import { useMemo } from 'react'
-import { Dropdown, Empty, Menu } from '@arco-design/web-react'
+import { Button, Dropdown, Empty, Menu, Tooltip } from '@arco-design/web-react'
 import * as modals from '@libs/modals'
 
 interface Props {
@@ -42,24 +48,17 @@ const DatasetNode = observer(({ dataset, onMenuClick }: Props) => {
         {rootIcon()}
         <IconDatabase className={classnames(styles.icon, styles.storage)} />
         <span className={styles.text}>{dataset}</span>
-        <Dropdown
-          trigger="click"
-          droplist={
-            <Menu
-              onClickMenuItem={(key, e: MouseEvent) => {
-                e.stopPropagation()
-                onMenuClick(key as any)
-              }}
-            >
-              <Menu.Item key="createCollection">Create Collection...</Menu.Item>
-            </Menu>
-          }
-        >
-          <IconMore
-            className={styles.icon}
-            onClick={e => e.stopPropagation()}
+        <Tooltip content="Create Collection" position="bottom">
+          <Button
+            size="mini"
+            icon={<IconPlus />}
+            type="primary"
+            onClick={e => {
+              e.stopPropagation()
+              onMenuClick('createCollection')
+            }}
           />
-        </Dropdown>
+        </Tooltip>
       </div>
       <div
         className={classnames(styles.children, {
@@ -91,7 +90,18 @@ const DatasetNode = observer(({ dataset, onMenuClick }: Props) => {
             >
               {item.collection}
             </span>
-            <Dropdown
+            <Tooltip content="View Schema" position="bottom">
+              <Button
+                size="mini"
+                icon={<IconEye />}
+                type="primary"
+                onClick={e => {
+                  e.stopPropagation()
+                  modals.viewSchema(item.schema)
+                }}
+              />
+            </Tooltip>
+            {/* <Dropdown
               trigger="click"
               droplist={
                 <Menu>
@@ -113,7 +123,7 @@ const DatasetNode = observer(({ dataset, onMenuClick }: Props) => {
               }
             >
               <IconMore className={styles.icon} />
-            </Dropdown>
+            </Dropdown> */}
           </div>
         ))}
       </div>

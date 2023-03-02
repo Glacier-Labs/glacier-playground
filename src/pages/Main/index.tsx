@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react'
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
-import { Select, Button, Dropdown, Menu } from '@arco-design/web-react'
+import { Select, Button, Dropdown, Menu, Space } from '@arco-design/web-react'
 import { IconPlus, IconMore } from '@arco-design/web-react/icon'
 
 import styles from './style.module.scss'
@@ -23,20 +23,12 @@ const Main = observer(() => {
 
   return (
     <>
-      <div className={styles.left}>
-        <Button
-          type="primary"
-          icon={<IconPlus />}
-          long
-          onClick={() => modals.createNamespace()}
-        >
-          Create Namespace
-        </Button>
-        <div className={styles.row}>
+      <div className={styles.top}>
+        <Space size="large">
           <Select
             value={store.currentSpace}
             onChange={value => store.setCurrentSpace(value)}
-            style={{ flex: 1 }}
+            style={{ minWidth: '200px' }}
           >
             {store.spaces.map((item, i) => (
               <Select.Option value={item} key={i}>
@@ -46,40 +38,44 @@ const Main = observer(() => {
               </Select.Option>
             ))}
           </Select>
-          <Dropdown
-            trigger="click"
-            droplist={
-              <Menu>
-                <Menu.Item
-                  key="create"
-                  onClick={() => {
-                    modals.createDataset()
-                  }}
-                >
-                  Create Dataset...
-                </Menu.Item>
-              </Menu>
-            }
-          >
-            <Button icon={<IconMore />} />
-          </Dropdown>
-        </div>
-        <div>
-          {store.datasets.map((item, i) => (
-            <DatasetNode
-              dataset={item}
-              key={i}
-              onMenuClick={action => {
-                if (action === 'createCollection') {
-                  modals.createCollection(item)
-                }
-              }}
-            />
-          ))}
-        </div>
+          <span>Databases: {store.datasets.length}</span>
+        </Space>
+        <Button
+          type="primary"
+          onClick={() => modals.createNamespace()}
+        >
+          Create a new Namespace
+        </Button>
       </div>
-      <div className={styles.main}>
-        {store.tabs.length > 0 && <Documents />}
+      <div className={styles.content}>
+        <div className={styles.left}>
+          <Button
+            type="primary"
+            long
+            icon={<IconPlus />}
+            onClick={() => {
+              modals.createDataset()
+            }}
+          >
+            Create Dataset
+          </Button>
+          <div>
+            {store.datasets.map((item, i) => (
+              <DatasetNode
+                dataset={item}
+                key={i}
+                onMenuClick={action => {
+                  if (action === 'createCollection') {
+                    modals.createCollection(item)
+                  }
+                }}
+              />
+            ))}
+          </div>
+        </div>
+        <div className={styles.main}>
+          {store.tabs.length > 0 && <Documents />}
+        </div>
       </div>
     </>
   )

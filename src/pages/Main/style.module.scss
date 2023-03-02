@@ -1,3 +1,15 @@
+.top {
+  padding: 20px;
+  border-bottom: 1px solid var(--color-neutral-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
 .left {
   width: 240px;
   border-right: 1px solid var(--color-neutral-3);

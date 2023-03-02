@@ -179,17 +179,7 @@ class Store {
   }
 
   openTab(tab: TabItem) {
-    const index = this.tabs.findIndex(
-      item =>
-        item.namespace === tab.namespace &&
-        item.dataset === tab.dataset &&
-        item.collection === tab.collection
-    )
-    if (index > -1) this.activeTab = index
-    else {
-      this.tabs.push(tab)
-      this.activeTab = this.tabs.length - 1
-    }
+    this.tabs = [tab]
   }
 
   closeTab(index: number) {

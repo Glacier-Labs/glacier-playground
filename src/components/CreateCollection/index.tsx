@@ -69,7 +69,15 @@ const CreateCollection = observer((props: Props) => {
           field="name"
           rules={[
             {
-              required: true
+              required: true,
+              message: 'Name is required'
+            },
+            {
+              validator(value, cb) {
+                const msg = 'letters a-Z, numbers 0-9, 1-16 characters'
+                if (!/^[a-zA-Z0-9]{1,16}$/.test(value)) cb(msg)
+                else cb()
+              }
             }
           ]}
         >
@@ -80,7 +88,8 @@ const CreateCollection = observer((props: Props) => {
           field="schema"
           rules={[
             {
-              required: true
+              required: true,
+              message: 'Field is required'
             },
             {
               validator(value, cb) {

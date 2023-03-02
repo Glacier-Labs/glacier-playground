@@ -55,6 +55,13 @@ const CreateDataset = observer((props: Props) => {
           rules={[
             {
               required: true
+            },
+            {
+              validator(value, cb) {
+                const msg = 'letters a-Z, numbers 0-9, 1-16 characters'
+                if (!/^[a-zA-Z0-9]{1,16}$/.test(value)) cb(msg)
+                else cb()
+              }
             }
           ]}
         >

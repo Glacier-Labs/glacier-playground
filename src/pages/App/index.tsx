@@ -8,12 +8,19 @@ import Connect from '@pages/Connect'
 import Header from '@components/Header'
 import { useStore } from '@libs/store'
 import { useEagerConnect, useInactiveListener } from '@libs/wallet'
+import { useEffect } from 'react'
 
 const App = observer(() => {
-  const tried = useEagerConnect()
-  useInactiveListener(!tried)
+  if (!localStorage.getItem('logout')) {
+    const tried = useEagerConnect()
+    useInactiveListener(!tried)
+  }
   const store = useStore()
   const { account } = useWeb3React()
+
+  useEffect(() => {
+    if (account) localStorage.removeItem('logout')
+  }, [account])
 
   const content = () => {
     if (!account) return <Login />
@@ -24,9 +31,7 @@ const App = observer(() => {
   return (
     <div className={styles.wrap}>
       <Header />
-      <main className={styles.main}>
-        {content()}
-      </main>
+      <main className={styles.main}>{content()}</main>
     </div>
   )
 })
