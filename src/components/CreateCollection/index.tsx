@@ -74,7 +74,7 @@ const CreateCollection = observer((props: Props) => {
             },
             {
               validator(value, cb) {
-                const msg = 'letters a-Z, numbers 0-9, 1-16 characters'
+                const msg = '1-16 alphanumeric characters, no spaces'
                 if (!/^[a-zA-Z0-9]{1,16}$/.test(value)) cb(msg)
                 else cb()
               }
