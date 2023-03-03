@@ -12,3 +12,20 @@
   align-items: center;
   gap: 10px;
 }
+.account {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.domain {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--color-text-2);
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}

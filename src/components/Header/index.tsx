@@ -1,17 +1,39 @@
+import { useState, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 
 import styles from './style.module.scss'
+import UdLogo from '@assets/imgs/ud_logo.svg'
 import * as util from '@libs/util'
+import * as service from '@libs/service'
 import { Space, Button, Dropdown, Menu } from '@arco-design/web-react'
 import { IconDown } from '@arco-design/web-react/icon'
 
 export default function Header() {
   const { account } = useWeb3React()
+  const [ready, setReady] = useState(false)
+  const [domain, setDomain] = useState('')
 
   const logout = () => {
     localStorage.setItem('logout', '1')
     window.location.reload()
   }
+
+  useEffect(() => {
+    if (!account) return
+    service
+      .domains([account])
+      .then(data => {
+        if (data.data.length) {
+          setDomain(data.data[0].meta.domain)
+          setReady(true)
+        } else {
+          setDomain('')
+        }
+      })
+      .finally(() => {
+        setReady(true)
+      })
+  }, [account])
 
   return (
     <header className={styles.header}>
@@ -20,7 +42,7 @@ export default function Header() {
         <span>Glacier Playground</span>
       </div>
       <Space size="medium">
-        {!!account && (
+        {ready && !!account && (
           <Dropdown
             position="br"
             droplist={
@@ -32,8 +54,22 @@ export default function Header() {
             }
           >
             <Button type="text">
-              {util.shortAccount(account)}
-              <IconDown />
+              <div className={styles.account}>
+                {!!domain ? (
+                  <a
+                    className={styles.domain}
+                    href={`https://ud.me/${domain}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={UdLogo} alt="" />
+                    <span>{domain}</span>
+                  </a>
+                ) : (
+                  util.shortAccount(account)
+                )}
+                <IconDown />
+              </div>
             </Button>
           </Dropdown>
         )}
