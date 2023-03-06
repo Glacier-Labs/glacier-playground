@@ -95,6 +95,15 @@ const Document = observer(
       [store, tab]
     )
 
+    const share = () => {
+      const scan = `https://testnet.scan.glacier.io/collection?namespace=${tab.namespace}&dataset=${tab.dataset}&collection=${tab.collection.collection}`
+      const text = `Check out this decentralized database on glacier ${scan} via @Glacier_Labs`
+      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        text
+      )}`
+      window.open(url)
+    }
+
     const columns = useMemo(() => {
       const cols: TableColumnProps<any>[] = [
         {
@@ -200,7 +209,7 @@ const Document = observer(
               <Button
                 icon={<IconLaunch />}
                 type="primary"
-                href={`https://testnet.scan.glacier.io/collection?namespace=${tab.namespace}&dataset=${tab.dataset}&collection=${tab.collection.collection}`}
+                onClick={share}
                 target="_blank"
               />
               <Button

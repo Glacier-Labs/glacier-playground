@@ -16,7 +16,7 @@ export async function domains(addresses: string[]) {
       }),
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer cc857e76-df8f-4cfb-8a93-ebad02b66722'
+        Authorization: 'Bearer ' + process.env.REACT_APP_UD_TOKEN
       }
     }
   )

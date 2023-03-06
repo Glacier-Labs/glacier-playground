@@ -26,7 +26,7 @@ const CreateDataset = observer((props: Props) => {
       props.onClose()
       Message.success('Dataset Created')
     } catch (error: any) {
-      Message.error('Create Failed')
+      Message.error(error.message || 'Create Failed')
     }
   }
 

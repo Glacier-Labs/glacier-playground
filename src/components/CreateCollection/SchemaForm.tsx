@@ -113,14 +113,6 @@ export default function SchemaForm(props: Props) {
             <Select.Option value="boolean">boolean</Select.Option>
           </Select>
           <Input
-            placeholder="Title"
-            value={item.title}
-            onChange={val => {
-              item.title = val
-              update()
-            }}
-          />
-          <Input
             placeholder="Description"
             value={item.description}
             onChange={val => {

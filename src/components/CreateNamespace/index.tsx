@@ -25,8 +25,8 @@ const CreateNamespace = observer((props: Props) => {
       await store.createNamespace(name)
       props.onClose()
       Message.success('Namespace Created')
-    } catch (error) {
-      Message.error('Create Failed')
+    } catch (error: any) {
+      Message.error(error.message || 'Create Failed')
     }
   }
 

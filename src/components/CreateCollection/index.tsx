@@ -34,7 +34,7 @@ const CreateCollection = observer((props: Props) => {
       Message.success('Collection Created')
     } catch (error: any) {
       console.trace(error)
-      Message.error('Create Failed')
+      Message.error(error.message || 'Create Failed')
     }
   }
 
@@ -53,7 +53,7 @@ const CreateCollection = observer((props: Props) => {
       escToExit={false}
       onCancel={() => setVisible(false)}
       afterClose={props.onClose}
-      style={{ width: '1000px' }}
+      style={{ width: '900px' }}
     >
       <Form
         ref={form}
