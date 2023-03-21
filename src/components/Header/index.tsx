@@ -37,10 +37,10 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.brand}>
+      <a className={styles.brand} href="https://www.glacier.io/" target="_blank" rel="noreferrer">
         <img src="/favicon.svg" alt="" />
         <span>Glacier Playground</span>
-      </div>
+      </a>
       <Space size="medium">
         {ready && !!account && (
           <Dropdown
@@ -75,7 +75,7 @@ export default function Header() {
         )}
         <Button
           href="https://testnet.scan.glacier.io/"
-          type="default"
+          type="outline"
           target="_blank"
         >
           Glacier Scan

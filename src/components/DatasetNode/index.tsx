@@ -2,7 +2,6 @@ import classnames from 'classnames'
 import { observer } from 'mobx-react'
 import {
   IconRight,
-  IconMore,
   IconLoading,
   IconPlus,
   IconEye
@@ -13,7 +12,7 @@ import { ReactComponent as IconDatabase } from '@assets/imgs/database.svg'
 import { ReactComponent as IconTable } from '@assets/imgs/table.svg'
 import { useStore } from '@libs/store'
 import { useMemo } from 'react'
-import { Button, Dropdown, Empty, Menu, Tooltip } from '@arco-design/web-react'
+import { Button, Empty, Tooltip } from '@arco-design/web-react'
 import * as modals from '@libs/modals'
 
 interface Props {
@@ -101,29 +100,6 @@ const DatasetNode = observer(({ dataset, onMenuClick }: Props) => {
                 }}
               />
             </Tooltip>
-            {/* <Dropdown
-              trigger="click"
-              droplist={
-                <Menu>
-                  <Menu.Item
-                    key="insert"
-                    onClick={() =>
-                      modals.editDocument(store.currentSpace, dataset, item)
-                    }
-                  >
-                    Insert Document...
-                  </Menu.Item>
-                  <Menu.Item
-                    key="viewSchema"
-                    onClick={() => modals.viewSchema(item.schema)}
-                  >
-                    View Schema...
-                  </Menu.Item>
-                </Menu>
-              }
-            >
-              <IconMore className={styles.icon} />
-            </Dropdown> */}
           </div>
         ))}
       </div>

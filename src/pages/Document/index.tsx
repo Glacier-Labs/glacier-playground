@@ -207,11 +207,12 @@ const Document = observer(
             </Breadcrumb>
             <Space direction="vertical" align="end">
               <Button
-                icon={<IconLaunch />}
-                type="primary"
+                type="outline"
                 onClick={share}
                 target="_blank"
-              />
+              >
+                Share to Twitter
+              </Button>
               <Button
                 type="primary"
                 onClick={() => {

@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react'
-import { useEffect, useMemo } from 'react'
+import { useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
-import { Select, Button, Dropdown, Menu, Space } from '@arco-design/web-react'
-import { IconPlus, IconMore } from '@arco-design/web-react/icon'
+import { Select, Button, Space } from '@arco-design/web-react'
+import { IconPlus } from '@arco-design/web-react/icon'
 
 import styles from './style.module.scss'
 import { ReactComponent as IconFolder } from '@assets/imgs/folder.svg'
@@ -38,19 +38,20 @@ const Main = observer(() => {
               </Select.Option>
             ))}
           </Select>
-          <span>Databases: {store.datasets.length}</span>
+          <span>Datasets: {store.datasets.length}</span>
         </Space>
-        <Button
-          type="primary"
-          onClick={() => modals.createNamespace()}
-        >
-          Create a new Namespace
-        </Button>
       </div>
       <div className={styles.content}>
         <div className={styles.left}>
           <Button
             type="primary"
+            long
+            onClick={() => modals.createNamespace()}
+          >
+            Create a new Namespace
+          </Button>
+          <Button
+            type="outline"
             long
             icon={<IconPlus />}
             onClick={() => {
