@@ -22,9 +22,9 @@ import {
 import {
   IconEdit,
   IconDelete,
-  IconEye,
-  IconLaunch
+  IconEye
 } from '@arco-design/web-react/icon'
+import { useWeb3React } from '@web3-react/core'
 
 import styles from './style.module.scss'
 import { ReactComponent as IconDatabase } from '@assets/imgs/database.svg'
@@ -44,6 +44,7 @@ const DefaultCmd = 'find({}).skip(0).limit(10)'
 const Document = observer(
   forwardRef((props: Props, ref) => {
     const store = useStore()
+    const { account } = useWeb3React()
 
     const tab = useMemo(() => {
       return store.tabs[props.index]
@@ -96,8 +97,18 @@ const Document = observer(
     )
 
     const share = () => {
-      const scan = `https://testnet.scan.glacier.io/dataset?namespace=${tab.namespace}&dataset=${tab.dataset}`
-      const text = `Check out this decentralized database on glacier ${scan} via @Glacier_Labs`
+      // const scan = `https://testnet.scan.glacier.io/dataset?namespace=${tab.namespace}&dataset=${tab.dataset}`
+      // const text = `Check out this decentralized database on glacier ${scan} via @Glacier_Labs`
+      const text = `💰Hey I just earned 10 $GLC. 
+✏️Just write on Glacier Testnet.
+
+@Glacier_Labs is building a modular, dynamic and scalable NoSQL #database powered by #zkRollup.
+
+Join the Glacier #Referral Program via my link👇
+
+https://www.glacier.io/referral/join?inviter=${account}
+
+#Crypto #Giveaways #Airdrops`
       const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
         text
       )}`
