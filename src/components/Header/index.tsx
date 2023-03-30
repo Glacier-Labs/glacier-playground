@@ -74,7 +74,7 @@ export default function Header() {
           </Dropdown>
         )}
         <Button
-          href="https://testnet.scan.glacier.io/"
+          href="https://scan.glacier.io/"
           type="outline"
           target="_blank"
         >
