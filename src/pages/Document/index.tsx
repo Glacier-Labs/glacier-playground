@@ -99,16 +99,17 @@ const Document = observer(
     const share = () => {
       // const scan = `https://testnet.scan.glacier.io/dataset?namespace=${tab.namespace}&dataset=${tab.dataset}`
       // const text = `Check out this decentralized database on glacier ${scan} via @Glacier_Labs`
-      const text = `💰Hey I just earned 10 $GLC. 
-✏️Just write on Glacier Testnet.
+      const text = `💰Hey, I earned 10 $GLC
 
-@Glacier_Labs is building a modular, dynamic and scalable NoSQL #database powered by #zkRollup.
+🧊Just write on Glacier Testnet
 
-Join the Glacier #Referral Program via my link👇
+@Glacier_Labs is building a modular, dynamic and scalable NoSQL #database for large-scale Dapps.
 
-https://www.glacier.io/referral/join?inviter=${account}
+Join the #Referral Program via my link
+👉https://www.glacier.io/referral/?${account}
 
-#Crypto #Giveaways #Airdrops`
+#Web3 #Giveaways #Airdrop`
+
       const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
         text
       )}`

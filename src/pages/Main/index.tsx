@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
 import { Select, Button, Space } from '@arco-design/web-react'
-import { IconPlus } from '@arco-design/web-react/icon'
+import { IconPlus, IconUserAdd } from '@arco-design/web-react/icon'
 
 import styles from './style.module.scss'
 import { ReactComponent as IconFolder } from '@assets/imgs/folder.svg'
@@ -40,14 +40,16 @@ const Main = observer(() => {
           </Select>
           <span>Datasets: {store.datasets.length}</span>
         </Space>
+        <Button
+          type="primary"
+          href="https://www.glacier.io/referral/"
+          target="_blank"
+          icon={<IconUserAdd />}
+        >Invite</Button>
       </div>
       <div className={styles.content}>
         <div className={styles.left}>
-          <Button
-            type="primary"
-            long
-            onClick={() => modals.createNamespace()}
-          >
+          <Button type="primary" long onClick={() => modals.createNamespace()}>
             Create a new Namespace
           </Button>
           <Button
