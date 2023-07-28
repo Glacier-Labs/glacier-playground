@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: bold;
 }
 .content {
   flex: 1;
@@ -30,7 +31,6 @@
 }
 .icon {
   font-size: 16px;
-  color: rgb(var(--gold-6));
 }
 .row {
   display: flex;

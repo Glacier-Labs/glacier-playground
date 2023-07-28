@@ -45,7 +45,7 @@ const DatasetNode = observer(({ dataset, onMenuClick }: Props) => {
         onClick={() => store.toggleExpand(dataset)}
       >
         {rootIcon()}
-        <IconDatabase className={classnames(styles.icon, styles.storage)} />
+        <IconDatabase className={classnames(styles.icon)} />
         <span className={styles.text}>{dataset}</span>
         <Tooltip content="Create Collection" position="bottom">
           <Button
@@ -76,7 +76,7 @@ const DatasetNode = observer(({ dataset, onMenuClick }: Props) => {
             })}
             key={i}
           >
-            <IconTable className={classnames(styles.icon, styles.collection)} />
+            <IconTable className={classnames(styles.icon)} />
             <span
               className={styles.text}
               onClick={() => {

@@ -24,7 +24,6 @@ import {
   IconDelete,
   IconEye
 } from '@arco-design/web-react/icon'
-import { useWeb3React } from '@web3-react/core'
 
 import styles from './style.module.scss'
 import { ReactComponent as IconDatabase } from '@assets/imgs/database.svg'
@@ -44,7 +43,6 @@ const DefaultCmd = 'find({}).skip(0).limit(10)'
 const Document = observer(
   forwardRef((props: Props, ref) => {
     const store = useStore()
-    const { account } = useWeb3React()
 
     const tab = useMemo(() => {
       return store.tabs[props.index]
@@ -95,26 +93,6 @@ const Document = observer(
       },
       [store, tab]
     )
-
-    const share = () => {
-      // const scan = `https://testnet.scan.glacier.io/dataset?namespace=${tab.namespace}&dataset=${tab.dataset}`
-      // const text = `Check out this decentralized database on glacier ${scan} via @Glacier_Labs`
-      const text = `💰Hey, I earned 10 $GLC
-
-🧊Just write on Glacier Testnet
-
-@Glacier_Labs is building a modular, dynamic and scalable NoSQL #database for large-scale Dapps.
-
-Join the #Referral Program via my link
-👉https://www.glacier.io/referral/?${account}
-
-#Web3 #Giveaways #Airdrop`
-
-      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        text
-      )}`
-      window.open(url)
-    }
 
     const columns = useMemo(() => {
       const cols: TableColumnProps<any>[] = [
@@ -205,15 +183,15 @@ Join the #Referral Program via my link
           <div className={styles.nav}>
             <Breadcrumb>
               <Breadcrumb.Item className={styles.breadcrumb}>
-                <IconFolder className={styles.folder} />
+                <IconFolder />
                 <span>{tab.namespace}</span>
               </Breadcrumb.Item>
               <Breadcrumb.Item className={styles.breadcrumb}>
-                <IconDatabase className={styles.storage} />
+                <IconDatabase />
                 <span>{tab.dataset}</span>
               </Breadcrumb.Item>
               <Breadcrumb.Item className={styles.breadcrumb}>
-                <IconTable className={styles.file} />
+                <IconTable />
                 <span>{tab.collection.collection}</span>
               </Breadcrumb.Item>
             </Breadcrumb>

@@ -33,7 +33,7 @@ const Main = observer(() => {
             {store.spaces.map((item, i) => (
               <Select.Option value={item} key={i}>
                 <div className={styles.option}>
-                  <IconFolder className={styles.icon} /> {item}
+                  <IconFolder /> {item}
                 </div>
               </Select.Option>
             ))}
