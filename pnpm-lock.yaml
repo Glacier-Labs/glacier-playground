@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@arco-design/web-react':
     specifier: ^2.41.2
@@ -12,7 +16,7 @@ dependencies:
     version: 5.7.2
   '@glacier-network/client':
     specifier: ^0.2.1
-    version: registry.npmjs.org/@glacier-network/client@0.2.1
+    version: 0.2.1
   '@types/node':
     specifier: ^16.18.3
     version: 16.18.11
@@ -1881,6 +1885,25 @@ packages:
       '@ethersproject/logger': 5.7.0
       '@ethersproject/properties': 5.7.0
       '@ethersproject/strings': 5.7.0
+    dev: false
+
+  /@glacier-network/client@0.2.1:
+    resolution: {integrity: sha512-NjHyMbarWCSe4EogFBxKbaElG8hmHTCS6PXhBKsk7bU0u+hYl86EGIOK/uC0Q2e+0A5XmQKJRAdtecQ91Nz4gg==}
+    dependencies:
+      '@ethersproject/abstract-signer': 5.7.0
+      '@ethersproject/bytes': 5.7.0
+      '@ethersproject/hash': 5.7.0
+      '@ethersproject/providers': 5.7.2
+      '@ethersproject/sha2': 5.7.0
+      '@ethersproject/signing-key': 5.7.0
+      '@ethersproject/strings': 5.7.0
+      '@ethersproject/wallet': 5.7.0
+      '@types/json-schema': 7.0.11
+      axios: 1.2.2
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - utf-8-validate
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:
@@ -7496,7 +7519,7 @@ packages:
       levn: 0.3.0
       prelude-ls: 1.1.2
       type-check: 0.3.2
-      word-wrap: 1.2.3
+      word-wrap: 1.2.5
 
   /optionator@0.9.1:
     resolution: {integrity: sha512-74RlY5FCnhq4jRxVUPKDaRwrVNXMqsGsiW6AJw4XK8hmtm10wC0ypZBLw5IIp85NZMr91+qd1RvvENwg7jjRFw==}
@@ -7507,7 +7530,7 @@ packages:
       levn: 0.4.1
       prelude-ls: 1.2.1
       type-check: 0.4.0
-      word-wrap: 1.2.3
+      word-wrap: 1.2.5
 
   /os-browserify@0.3.0:
     resolution: {integrity: sha512-gjcpUc3clBf9+210TRaDWbf+rZZZEshZ+DlXMRCeAjp0xhTrnQsKHypIy1J3d5hKdUzj69t708EHtU8P6bUn0A==}
@@ -10318,8 +10341,8 @@ packages:
     dependencies:
       isexe: 2.0.0
 
-  /word-wrap@1.2.3:
-    resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
+  /word-wrap@1.2.5:
+    resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
   /workbox-background-sync@6.5.4:
@@ -10615,24 +10638,3 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  registry.npmjs.org/@glacier-network/client@0.2.1:
-    resolution: {integrity: sha512-NjHyMbarWCSe4EogFBxKbaElG8hmHTCS6PXhBKsk7bU0u+hYl86EGIOK/uC0Q2e+0A5XmQKJRAdtecQ91Nz4gg==, registry: https://registry.npmmirror.com/, tarball: https://registry.npmjs.org/@glacier-network/client/-/client-0.2.1.tgz}
-    name: '@glacier-network/client'
-    version: 0.2.1
-    dependencies:
-      '@ethersproject/abstract-signer': 5.7.0
-      '@ethersproject/bytes': 5.7.0
-      '@ethersproject/hash': 5.7.0
-      '@ethersproject/providers': 5.7.2
-      '@ethersproject/sha2': 5.7.0
-      '@ethersproject/signing-key': 5.7.0
-      '@ethersproject/strings': 5.7.0
-      '@ethersproject/wallet': 5.7.0
-      '@types/json-schema': 7.0.11
-      axios: 1.2.2
-    transitivePeerDependencies:
-      - bufferutil
-      - debug
-      - utf-8-validate
-    dev: false
