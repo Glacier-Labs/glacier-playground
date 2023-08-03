@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@arco-design/web-react':
     specifier: ^2.41.2
@@ -12,7 +16,7 @@ dependencies:
     version: 5.7.2
   '@glacier-network/client':
     specifier: ^0.2.1
-    version: registry.npmjs.org/@glacier-network/client@0.2.1
+    version: 0.2.1
   '@types/node':
     specifier: ^16.18.3
     version: 16.18.11
@@ -1881,6 +1885,25 @@ packages:
       '@ethersproject/logger': 5.7.0
       '@ethersproject/properties': 5.7.0
       '@ethersproject/strings': 5.7.0
+    dev: false
+
+  /@glacier-network/client@0.2.1:
+    resolution: {integrity: sha512-NjHyMbarWCSe4EogFBxKbaElG8hmHTCS6PXhBKsk7bU0u+hYl86EGIOK/uC0Q2e+0A5XmQKJRAdtecQ91Nz4gg==}
+    dependencies:
+      '@ethersproject/abstract-signer': 5.7.0
+      '@ethersproject/bytes': 5.7.0
+      '@ethersproject/hash': 5.7.0
+      '@ethersproject/providers': 5.7.2
+      '@ethersproject/sha2': 5.7.0
+      '@ethersproject/signing-key': 5.7.0
+      '@ethersproject/strings': 5.7.0
+      '@ethersproject/wallet': 5.7.0
+      '@types/json-schema': 7.0.11
+      axios: 1.2.2
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - utf-8-validate
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:
@@ -8592,7 +8615,7 @@ packages:
       react-scripts: '>=2.1.3'
     dependencies:
       react-scripts: 5.0.1(@babel/plugin-syntax-flow@7.18.6)(@babel/plugin-transform-react-jsx@7.20.7)(eslint@8.31.0)(react@18.2.0)(sass@1.57.1)(typescript@4.9.4)
-      semver: 5.7.1
+      semver: 5.7.2
     dev: true
 
   /react-clientside-effect@1.2.6(react@18.2.0):
@@ -9179,8 +9202,8 @@ packages:
     dependencies:
       node-forge: 1.3.1
 
-  /semver@5.7.1:
-    resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
+  /semver@5.7.2:
+    resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
     dev: true
 
@@ -10615,24 +10638,3 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  registry.npmjs.org/@glacier-network/client@0.2.1:
-    resolution: {integrity: sha512-NjHyMbarWCSe4EogFBxKbaElG8hmHTCS6PXhBKsk7bU0u+hYl86EGIOK/uC0Q2e+0A5XmQKJRAdtecQ91Nz4gg==, registry: https://registry.npmmirror.com/, tarball: https://registry.npmjs.org/@glacier-network/client/-/client-0.2.1.tgz}
-    name: '@glacier-network/client'
-    version: 0.2.1
-    dependencies:
-      '@ethersproject/abstract-signer': 5.7.0
-      '@ethersproject/bytes': 5.7.0
-      '@ethersproject/hash': 5.7.0
-      '@ethersproject/providers': 5.7.2
-      '@ethersproject/sha2': 5.7.0
-      '@ethersproject/signing-key': 5.7.0
-      '@ethersproject/strings': 5.7.0
-      '@ethersproject/wallet': 5.7.0
-      '@types/json-schema': 7.0.11
-      axios: 1.2.2
-    transitivePeerDependencies:
-      - bufferutil
-      - debug
-      - utf-8-validate
-    dev: false
