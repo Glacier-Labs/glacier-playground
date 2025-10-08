@@ -9,7 +9,7 @@
     "@glacier-network/client": "^0.2.1",
     "@types/node": "^16.18.3",
     "@types/prismjs": "^1.26.0",
-    "@types/react": "^18.0.25",
+    "@types/react": "^18.3.24",
     "@types/react-dom": "^18.0.8",
     "@uiw/codemirror-theme-vscode": "^4.14.0",
     "@uiw/react-codemirror": "^4.14.0",
